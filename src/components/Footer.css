@@ -1,0 +1,13 @@
+.footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 32px 24px 40px;
+  color: var(--text-2);
+  font-size: 0.85rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.footer__code {
+  color: var(--accent-dim);
+}

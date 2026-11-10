@@ -1,0 +1,97 @@
+.code-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: var(--bg-0);
+  pointer-events: none;
+}
+
+.code-bg__vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: radial-gradient(ellipse at 50% 0%, transparent 0%, var(--bg-0) 78%),
+    linear-gradient(180deg, color-mix(in srgb, var(--bg-0) 40%, transparent) 0%, color-mix(in srgb, var(--bg-0) 75%, transparent) 55%, var(--bg-0) 100%);
+}
+
+.code-bg__layer {
+  position: absolute;
+  inset: -20% 0 -20% 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 2vw;
+  padding: 0 3vw;
+  will-change: transform;
+}
+
+.code-bg__layer--back {
+  opacity: 0.22;
+  filter: blur(0.5px);
+  font-size: clamp(11px, 1vw, 14px);
+}
+
+.code-bg__layer--mid {
+  opacity: 0.3;
+  font-size: clamp(12px, 1.15vw, 16px);
+}
+
+.code-bg__layer--front {
+  opacity: 0.4;
+  font-size: clamp(13px, 1.3vw, 18px);
+}
+
+.code-column__text {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  color: var(--accent);
+  white-space: pre;
+  line-height: 1.7;
+  text-shadow: 0 0 12px color-mix(in srgb, var(--accent) 25%, transparent);
+  animation-name: code-scroll;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.code-bg__layer--back .code-column__text {
+  animation-duration: 70s;
+  color: var(--accent-dim);
+}
+
+.code-bg__layer--mid .code-column__text {
+  animation-duration: 48s;
+  animation-direction: reverse;
+}
+
+.code-bg__layer--front .code-column__text {
+  animation-duration: 34s;
+}
+
+.code-bg__layer--mid .code-column__text:nth-child(even),
+.code-bg__layer--front .code-column__text:nth-child(odd) {
+  animation-duration: inherit;
+  animation-delay: -8s;
+}
+
+@keyframes code-scroll {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .code-column__text {
+    animation: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .code-bg__layer--back {
+    display: none;
+  }
+}

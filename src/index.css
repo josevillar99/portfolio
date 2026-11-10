@@ -1,0 +1,179 @@
+:root {
+  /* Paleta "crema y verde bosque": todos los colores de la web salen de aquí.
+     Las transparencias se calculan con color-mix() a partir de estas variables. */
+  --bg-0: #f4f1ea;        /* fondo de la página */
+  --bg-1: #ebe7dd;        /* fondo de barra, selector de idioma y ventana de demo */
+  --surface: color-mix(in srgb, var(--bg-1) 55%, transparent);   /* tarjetas */
+  --tint: #1f2a22;        /* velos sobre el fondo (bordes y rellenos suaves) */
+  --border: color-mix(in srgb, var(--tint) 8%, transparent);
+  --shadow: #1f2a22;      /* sombras */
+  --text-0: #1f2a22;      /* texto principal */
+  --text-1: #45503f;      /* texto secundario */
+  --text-2: #7b8275;      /* texto apagado */
+  --accent: #2d5a3d;      /* color de acento (enlaces, botones, brillos) */
+  --accent-dim: #e0dbcf;  /* código del fondo, muy suave */
+  --accent-2: #2d5a3d;    /* segundo acento (degradados, etiqueta "En desarrollo") */
+  --on-accent: #ffffff;   /* texto encima de un botón de color de acento */
+
+  --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;   /* títulos */
+
+  color-scheme: light;
+  font-family: 'Space Grotesk', 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-0);
+  color: var(--text-0);
+  overflow-x: hidden;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 28px;
+}
+
+.section > * {
+  max-width: 1120px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--accent);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+}
+
+.section-lead {
+  color: var(--text-1);
+  font-size: 1.02rem;
+  line-height: 1.7;
+  max-width: 640px;
+  margin-bottom: 8px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 28px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease,
+    background-color 0.25s ease, color 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--on-accent);
+  box-shadow: 0 12px 30px -10px color-mix(in srgb, var(--accent) 50%, transparent);
+}
+
+.btn--primary:hover {
+  box-shadow: 0 16px 36px -8px color-mix(in srgb, var(--accent) 65%, transparent);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text-0);
+}
+
+.btn--ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 7%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent);
+  color: var(--text-1);
+  font-size: 0.82rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.chip--sm {
+  padding: 5px 11px;
+  font-size: 0.72rem;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding: 48px 20px;
+  }
+}

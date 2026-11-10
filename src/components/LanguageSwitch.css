@@ -1,0 +1,53 @@
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  background: color-mix(in srgb, var(--bg-1) 50%, transparent);
+}
+
+.lang-switch__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.lang-switch__btn svg {
+  width: 22px;
+  height: 15px;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--tint) 15%, transparent);
+  opacity: 0.45;
+  filter: grayscale(0.6);
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.lang-switch__btn:hover svg,
+.lang-switch__btn:focus-visible svg {
+  opacity: 0.85;
+  filter: none;
+}
+
+.lang-switch__btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.lang-switch__btn.is-active {
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+}
+
+.lang-switch__btn.is-active svg {
+  opacity: 1;
+  filter: none;
+}
