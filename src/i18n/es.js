@@ -86,8 +86,8 @@ const es = {
       {
         name: 'Panel para marco digital',
         description:
-          'Panel para la pantalla de casa, servido como add-on de Home Assistant: agenda, tiempo, música y estadísticas de deporte y videojuegos, con integraciones como Spotify, Strava o Riot.',
-        tags: ['JavaScript', 'Node.js', 'HTML / CSS', 'Home Assistant', 'Docker'],
+          'Panel táctil para un marco digital de pared, servido como add-on de Home Assistant. Rota solo entre agenda, tiempo, cartera de inversión, entrenos de Strava y lista de la compra, muestra la música de Spotify con su letra y abre pantallas propias cuando empieza una partida de LoL o una carrera de iRacing. De noche se apaga según un horario y se enciende por voz con Alexa.',
+        tags: ['JavaScript', 'Node.js', 'HTML / CSS', 'Home Assistant', 'Docker', 'APIs REST'],
       },
     ],
     modal: {

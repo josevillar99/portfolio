@@ -2,6 +2,8 @@
 export const EMAIL = 'josevillarcorrales99@gmail.com'
 export const GITHUB_USER = 'josevillar99'
 export const GITHUB_URL = `https://github.com/${GITHUB_USER}?tab=repositories`
+// Base de cada repositorio: GITHUB_REPO/nombre-del-repo
+const GITHUB_REPO = `https://github.com/${GITHUB_USER}`
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/jose-villar-57293a1ab/'
 
 // CV para descargar (archivos en public/cv/)
@@ -15,8 +17,8 @@ export const CV_FILES = {
 // demoUrl: null en un proyecto publicado = demo bajo demanda (abre el modal)
 // codeUrl: null = botón de código deshabilitado
 export const PROJECT_LINKS = [
-  { status: 'live', demoUrl: null, codeUrl: `${GITHUB_URL}/ha-job-alert-bot` },
-  { status: 'live', demoUrl: null, codeUrl: `${GITHUB_URL}/barbershop` },
+  { status: 'live', demoUrl: null, codeUrl: `${GITHUB_REPO}/ha-job-alert-bot` },
+  { status: 'live', demoUrl: null, codeUrl: `${GITHUB_REPO}/barbershop` },
   { status: 'wip', demoUrl: null, codeUrl: null },
-  { status: 'wip', demoUrl: null, codeUrl: null },
+  { status: 'live', demoUrl: null, codeUrl: `${GITHUB_REPO}/ha-frame-panel` },
 ]

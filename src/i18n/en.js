@@ -86,8 +86,8 @@ const en = {
       {
         name: 'Digital frame dashboard',
         description:
-          'Dashboard for a screen at home, served as a Home Assistant add-on: calendar, weather, music and sports and gaming stats, with integrations such as Spotify, Strava or Riot.',
-        tags: ['JavaScript', 'Node.js', 'HTML / CSS', 'Home Assistant', 'Docker'],
+          'Touch dashboard for a wall-mounted digital frame, served as a Home Assistant add-on. It rotates on its own through calendar, weather, investment portfolio, Strava training and shopping list, shows Spotify music with lyrics and opens dedicated screens when a LoL match or an iRacing race starts. At night it switches off on a schedule, and Alexa turns it on by voice.',
+        tags: ['JavaScript', 'Node.js', 'HTML / CSS', 'Home Assistant', 'Docker', 'REST APIs'],
       },
     ],
     modal: {
